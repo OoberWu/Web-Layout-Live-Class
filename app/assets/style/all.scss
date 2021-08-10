@@ -1,23 +1,783 @@
-$color: #00cc99;
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 
-.header {
-  height: 200px;
-  background-color: #00cc99;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
 }
 
-.footer {
-  height: 200px;
-  background-color: #00cc99;
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
-.box {
-  width: 100px;
-  height: 100px;
-  background-color: red;
-  display: flex;
-  transition: all 0.5s;
-  &:hover {
-    width: 200px;
-    background-color: $color;
+a {
+    text-decoration: none;
+    display: block;
+}
+
+*, *::before, *::after{
+  box-sizing: border-box;
   }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+line-height: 1.5;
+}
+
+/* RWD圖片處理 */
+img{
+  display:block;
+  max-width:100%;
+  height:auto; 
+  }
+
+/* 字體大小 */
+
+.h1 {
+  font-size: 64px;
+}
+
+.h2 {
+  font-size: 48px;
+}
+
+.h3 {
+  font-size: 36px;
+}
+
+.h4 {
+  font-size: 24px;
+}
+
+.h5 {
+  font-size: 20px;
+}
+
+.h6 {
+  font-size: 14px;
+}
+
+
+/* 字體顏色 */
+
+.text-primary {
+  color: #650300;
+}
+
+.text-secondary {
+  color: #AA0601; 
+}
+
+.text-white {
+  color: #fff;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* 背景顏色 */
+
+.bg-primary {
+  background-color: #AA0601;
+}
+
+.bg-secondary {
+  background-color:#FBF2F2;
+}
+
+/* 間距 */
+.pb-1 {
+  padding-bottom: 8px;
+}
+
+.pb-3 {
+  padding-bottom: 24px;
+}
+
+.pt-10 {
+  padding-top: 80px;
+}
+
+.pb-10 {
+  padding-bottom: 80px;
+}
+
+.mb-2 {
+  margin-bottom: 16px;
+}
+
+.mb-4 {
+  margin-bottom: 32px;
+}
+
+.mb-9 {
+  margin-bottom: 72px;
+}
+
+.mb-10 {
+  margin-bottom: 80px;
+}
+
+.mr-4 {
+  margin-right: 32px;
+}
+
+.font-weight-medium{
+font-weight: 500;
+}
+
+/* top */
+
+.top-menu {
+  padding: 0 88px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-menu-logo{
+background-image: url('https://github.com/hexschool/webLayoutTraining1st/blob/master/week3/logo.png?raw=true');
+width: 80px;
+height: 49px;
+text-indent: 101%;
+white-space: nowrap;
+overflow: hidden;
+margin: 30px 0;
+}
+
+.top-menu-nav {
+  display: flex;
+}
+
+.top-menu-nav-link{
+padding: 32px;
+}
+
+.top-menu-nav-link:hover{
+color:#650300;
+}
+
+/* banner */
+.banner {
+  height: 840px;
+  background-image:url('https://github.com/hexschool/webLayoutTraining1st/blob/master/week3/banner.png?raw=true');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  max-width: 1110px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.banner-title-wrap{
+text-align: right;
+width: 100%;
+}
+
+.banner-title-wrap span{
+display: block;
+}
+
+.font-weight-bold {
+  font-weight: 576;
+}
+
+/* intro */
+
+.intro-icon-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.intro-icon {
+  width: 25%;
+  padding: 0 calc((25% - 208px)/2);
+}
+
+.intro-icon-img {
+  display: inline-block;
+}
+
+.intro-icon p{
+text-align: left;
+}
+
+.intro-icon-title{
+margin-bottom: 4px;
+}
+
+/* classic-frame */
+.classic-frame-products {
+  display: flex;
+  align-items: center;
+}
+
+.classic-frames-title {
+  display: flex;
+  font-weight: 900;
+font-style: italic;
+  margin-left: 30px;
+}
+
+.classic-frames li:nth-child(2){
+flex-direction: row-reverse;
+}
+
+.classic-frames li:nth-child(2) .classic-frames-title{
+margin-left: 0;
+margin-right: 30px;
+}
+
+.classic-frame-img {
+  width: 635px;
+  height: 320px;
+}
+
+/* brand-text */
+
+.brand {
+  background-image: url('https://github.com/hexschool/webLayoutTraining1st/blob/master/week3/bg.png?raw=true');
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+}
+
+.brand-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.brand-products {
+  position: relative;
+}
+
+.brand-img {
+  width: 100%;
+}
+
+.brand-text {
+font-size: 72px;
+position: absolute;
+width: 100%;
+text-align: center;
+top: 50%;
+transform: translate(0,-50%);
+}
+
+.brand-img-wrap::before{
+  display: block;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  opacity: .5;
+}
+
+/* customer */
+.customer-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.customer-name{
+margin-bottom: 7px;
+}
+
+.customer-text{
+padding: 14px 16px 15px 16px;
+}
+
+.customer-comment{
+margin-bottom: 10px;
+color: #707070;
+font-weight: 400;
+}
+
+.customer-name,.customer-comment-date{
+font-size: 14px;
+}
+
+
+.customer-text{
+border-width: 0 1px 1px 1px;
+border-style: solid;
+border-color:#DEE2E6;
+  box-shadow: 0px 2px 6px #00000029;
+  width: 277px;
+}
+
+.customer-li {
+  width: 277px;
+}
+
+/* contact */
+.contact-container{
+max-width: 730px;
+margin: 0 auto;
+}
+
+.contact-text{
+margin-bottom: 20px;
+}
+
+.contact-input-label{
+margin-bottom: 4px;
+}
+
+.contact-input-text{
+height: 50px;
+}
+
+.contact-input-textarea{
+resize: none;
+height: 136px;
+}
+
+.contact-input-text,.contact-input-textarea{
+width: 100%;
+border-style: none;
+border: 1px solid #000000;
+padding: 14px 0 15px 16px;
+}
+
+.contact-input-agree{
+display: inline;
+}
+
+.submit-btn{
+border: none;
+padding: 16px 143px; 
+margin: 42px auto 0 auto;
+}
+
+.submit-btn:hover{
+background: #650300;
+cursor: pointer;
+}
+
+/* footer */
+.footer{
+padding: 36px 0 28px 0;
+}
+
+
+.footer-menu{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #fff;
+}
+
+.footer-menu-nav {
+  display: flex;
+  margin-bottom: 32px;
+}
+
+.footer-menu-link{
+padding: 0 24px;
+}
+
+.footer-menu-link-index{
+padding: 0 24px 0 0;
+}
+
+.footer-menu-link:hover,.footer-contact-link:hover{
+color: #707070;
+}
+
+.footer-social-media-list {
+  display: flex;
+}
+
+.footer-social-media-link{
+margin-left: 32px;
+}
+
+.footer-contact{
+  display: flex;
+  align-items: center;
+margin-bottom: 20px;
+}
+
+.footer-contact-icon{
+width: 44px;
+margin-right: 17px;
+}
+
+.footer-contact-link{
+font-size: 36px;
+}
+
+.footer-logo{
+margin-right: 38px;
+}
+
+.terms-privacy{
+font-size: 14px;
+margin-left: 62px;
+}
+
+.footer-legal {
+  display: flex;
+  align-items: center;
+}
+
+.footer-legal-list {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footer-legal-links {
+  display: flex;
+}
+
+/* RWD */
+@media (max-width: 992px) {
+  .top-menu {
+      padding: 0 40px;
+  }
+
+  .banner {
+      height: 840px;
+  }
+
+  .h3 {
+      font-size: 20px;
+  }
+
+  .h1 {
+      font-size: 48px;
+  }
+
+  .intro-icon {
+      width: 50%;
+  margin-bottom: 40px;
+      padding-right: 40px;
+      padding-left: 40px;
+  }
+
+  .classic-frames li:nth-child(2) .classic-frames-title{
+  margin-left: 30px;
+  margin-right: 0px;
+}
+
+.classic-frames li:nth-child(2){
+  flex-direction: row;
+}
+
+  .classic-frames-icon {
+      width: 32px;
+  }
+
+  .classic-frames-text{
+  font-size: 28px;
+}
+
+  .classic-frame-img {
+      width: 390px;
+      height: 168px;
+  }
+
+  .classic-frame-products {
+      padding-left: 32px;
+  }
+
+  .h2 {
+      font-size: 32px;
+  }
+
+  .brand-img {
+      width: 330px;
+      height: 278px;
+  }
+
+  .brand-text{
+      font-size: 32px;
+  }
+
+  .customer-list {
+      flex-wrap: wrap;
+  }
+
+  .customer-li {
+      margin-bottom: 32px;
+      margin-left: 42px;
+      margin-right: 50px;
+  }
+
+.customer-img{
+  width: 277px;
+}
+
+  .contact-container{
+  max-width: 450px;
+}
+
+.contact-title{
+  margin-bottom: 16px;
+}
+
+.submit-btn{
+  padding: 8px 76px;
+  margin: 20px auto 0 auto;
+}
+
+.footer{
+  padding: 40px 0;
+}
+
+.footer-menu-nav{
+  margin-bottom: 24px;
+}
+
+.footer-social-media-link{
+  margin-left: 24px;
+}
+
+.footer-social-media-icon,.footer-contact-icon{
+  width: 24px;
+}
+
+.footer-contact{
+  margin-bottom: 8px;
+}
+
+.footer-contact-email{
+  margin-bottom: 24px;
+}
+
+.footer-contact-link{
+  font-size: 20px;
+}
+
+.footer-logo{
+  display: none;
+}
+}
+
+@media (max-width: 767px ) {
+
+  .top-menu-logo{
+  margin: 10px 0;
+}
+
+  .top-menu {
+      flex-direction: column;
+  padding: 0;
+  }
+
+  .top-menu-nav{
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+  .top-menu-nav li{
+  width: 50%;
+  border: 1px solid #fff;
+  text-align: center;
+}
+
+  .banner{
+  background-image: url('https://github.com/hexschool/webLayoutTraining1st/blob/master/week3/banner-sm.png?raw=true');
+  height: 394px;
+}
+
+  .h1 {
+      font-size: 32px;
+  }
+
+  .h2 {
+      font-size: 24px;
+  }
+
+  .h3 {
+      font-style: 16px;
+  }
+
+  .intro-icon{
+  width: 100%;
+}
+
+  .classic-frame-products{
+  display: block;
+  position: relative;
+      padding: 0px;
+}
+
+  .classic-frames-title{
+  margin-left: 0;
+}
+
+  .classic-frames li:nth-child(2) .classic-frames-title{
+  margin-left: 0;
+}
+
+  .classic-frames-text-sm{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+  .brand-list {
+      display: block;
+  }
+
+  .brand-list li:nth-child(1) {
+      margin-right: 0px;
+  }
+
+  .brand-list li:nth-child(1) {
+      margin-bottom: 16px;
+  }
+
+  .brand-img {
+      width: 345px;
+      height: 278px;
+  }
+  
+  .contact-container{
+  max-width: 100%;
+}
+
+.contact-title{
+  margin-bottom: 20px;
+}
+
+.submit-btn{
+  padding: 8px 54.5px;
+  margin: 24px auto 0 auto;
+}
+
+.footer{
+  padding: 24px 0 21px 0;
+}
+
+.footer-menu{
+  margin-bottom: 18px;
+}
+
+.footer-menu-nav{
+  display: none;
+}
+
+
+.footer-legal{
+  flex-direction: row-reverse;
+}
+
+.footer-legal-list{
+  flex-direction: column;
+}
+
+.footer-logo-link{
+  align-self: flex-end;
+}
+
+.footer-logo{
+  display: block;
+  width: 46px;
+  margin-right: 0;
+}
+
+.copyright{
+  margin-bottom: 8px;
+}
+
+.privacy{
+  margin-bottom: 8px;
+}
+
+.footer-legal-links{
+  display: block;
+}
+
+.terms-privacy{
+  margin-left: 0;
+}
+}
+
+.title {
+  font-size: 48px;
+  padding-left: 16px;
+  border-left:8px solid #9F1213;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.qa .subtitle {
+  font-size: 2rem;
+  margin-bottom: 36px;
+}
+
+.qa .qa-list {
+  margin-bottom: 64px;
+}
+
+.qa .qa-list .qa-item {
+  margin-bottom: 32px;
+}
+
+.qa .qa-list .qa-title {
+  margin-bottom: 16px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.qa .qa-list .qa-content {
+  padding-left: 95px;
+  max-width: 920px;
 }
